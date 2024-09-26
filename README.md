@@ -24,3 +24,27 @@ The transformation of lotus leaves and flowers can be achieved with this code
 
 [Game-of-life](https://p5js.org/examples/math-and-physics-game-of-life/)
 
+
+以下代码展示了如何使用 `p5.js` 库来模拟抽象表现主义中的自由形态和随机性。
+
+```javascript
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noLoop();
+}
+
+function draw() {
+  background(255);
+  for (let i = 0; i < 10; i++) {
+    let x = random(width);
+    let y = random(height);
+    let size = random(50, 150);
+    let color = [random(255), random(255), random(255)];
+    fill(color);
+    noStroke();
+    ellipse(x, y, size, size);
+    stroke(color);
+    strokeWeight(random(2, 5));
+    line(x, y, random(width), random(height));
+  }
+}
